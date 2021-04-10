@@ -1,36 +1,4 @@
-// .playerCon {
-//     border: 1px solid black;
-//     display: block;
-
-//     .playerVideo {
-//         display: flex;
-//         margin: 0 auto;
-//         max-width: 800px;
-//         width: 100%;
-//         border: 1px solid black;
-//     }
-
-//     .videoControls {
-//         border: 1px solid black;
-//         display: flex;
-//         justify-content: center;
-//         align-content: center;
-//     }
-// }
-html {
-    background: linear-gradient(42deg, #5ed3cd 0%, #119cce 48%,#0368d4 100%) no-repeat fixed;
-    background-size: cover;
-    overflow: hidden;
-}
-.hidden {
-    display: none;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-
-    
-    .container {
+.container {
         width: 80%;
         margin: 80px auto;
     
@@ -41,6 +9,9 @@ body {
             text-align: center;
         }
 
+        h2{
+            margin-bottom: 1rem;
+        }
         .row {
             display: flex;
             align-items: center;
@@ -52,24 +23,27 @@ body {
             min-width: 250px;
         }
 
-        .featureImg {
-            width: 83%;
-            margin: auto;
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
+        #video {
+            width: 90%;
+        }
 
-            .playBtnMain {
-                width: 25%;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
+        .controls{
+            background-color: whitesmoke;
+            border-radius: 10px;
+            padding: .5rem;
+            width: 90%;
+
+            button {
+                background-color: #f8731a;
+                color: rgb(0, 0, 131);
+                font-weight: bold;
+                border-radius: 10px;
+                padding: .5rem;
                 cursor: pointer;
-                opacity: 75%;
-            
+
                 &:hover {
-                    opacity: 100%;
+                    background-color: rgb(0, 0, 131);
+                    color: #f8731a;
                 }
             }
         }
@@ -78,10 +52,11 @@ body {
             display: flex;
             background-color: #fefbee;
             margin: 20px 0;
+            padding: auto;
             align-items: center;
             border-radius: 6px;
             overflow: hidden;
-            width: 85%;
+            width: 80%;
 
             .thumbnail {
                 position: relative;
@@ -95,8 +70,12 @@ body {
             }
 
             .playBtn {
-                width: 50%;
-                opacity: 75%;
+                background-color: #f8731a;
+                color: rgb(0, 0, 131);
+                font-weight: bold;
+                border-radius: 10px;
+                width: 75%;
+                padding: .5rem;
                 position: absolute;
                 left: 50%;
                 top: 50%;
@@ -104,31 +83,19 @@ body {
                 cursor: pointer;
 
                 &:hover {
-                    opacity: 100%;
+                    background-color: rgb(0, 0, 131);
+                    color: #f8731a;
                 }
             }
         }
-    }
 
-    .videoPlayer{
-        width: 80%;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        cursor: pointer;
-        display: none;
-
-        #closeBtn {
-            position:absolute;
-            top: 10px;
-            right: 10px;
-            width: 40px;
-            opacity: 60%;
-
-            &:hover {
-                opacity: 100%;
-            }
+        #lyrics {
+            display: none;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 40%;
+            text-align: center;
+            background: whitesmoke;
         }
     }
-}

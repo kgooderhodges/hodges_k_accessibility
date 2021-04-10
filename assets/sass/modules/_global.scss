@@ -4,36 +4,15 @@
     padding: 0;
 }
 
-// body {
-//     display: flex;
-//     min-height: 100vh;
-//     color: #fefbee;
-//     font-family: Arial, Helvetica, sans-serif;
-//     background: linear-gradient(246deg, #8ab6e9 0%,#2d79cf 48%,#0456b4 100%);
-//     align-items: center;
-//     justify-content: center;
-    
-    // header {
-    //     display:block;
-    //     font-size: 1.5em;
-    //     text-align: center;
-    // }
-// }
+html {
+    background: linear-gradient(42deg, #5ea8d3 0%, #0368d4 48%,#003975 100%) no-repeat fixed;
+    background-size: cover;
+}
+.hidden {
+    display: none;
+}
 
-// .playerCon{
-//     border:1px solid #000;
-//     display:block
-// }
-// .playerCon .playerVideo{
-//     display:flex;
-//     margin:0 auto;
-//     max-width:800px;
-//     width:100%;
-//     border:1px solid #000
-// }
-// .playerCon .videoControls{
-//     border:1px solid #000;
-//     display:flex;
-//     justify-content:center;
-//     align-content:center
-// }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: none;
+}
