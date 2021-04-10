@@ -1,30 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Accessibility Video Player</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <title>Accessibility Player</title>
 </head>
 
 <body>
-    
-    <header>
+    <div class="container">
         <h1>Accessibility Player</h1>
-    </header>
-    <div class="playerCon">
-        <video class="playerVideo" src="video/Guardians2.mp4"></video>
+        <div class="row">
 
-        <div class="videoControls">
-        <div class="progressBar">
-            <div class="progress"></div>
+            <div class="col">
+                <h2 class="hidden">Current Selected Video</h2>
+                <video id="video" controls preload="metadata" autoplay>
+                    <source src="public/video/Logan.mp4" type="video/mp4" autoplay>
+                    <track id="subtitles" label="English" kind="subtitles" srclang="en"
+                        src="public/captions/loganCaptions.vtt" default>
+                </video>
+
+
+                <div class="controls">
+                    <button class="playpause">Play</button>
+                    <button class="stop">Stop</button>
+                    <button class="rwd">Rwd</button>
+                    <button class="fwd">Fwd</button>
+                    <button id="mute" type="button">Mute/Unmute</button>
+                    <button id="volDown" type="button">Vol-</button>
+                    <button id="volUp" type="button">Vol+</button>
+                    <div class="time">00:00</div>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <h3 class="hidden">Video & Audio Selection Column</h3>
+                <div class="thumbnailRow">
+                    <div class="thumbnail">
+                        <img src="public/images/guardiansImgSm.jpg" alt="Guardians of the Galaxy 2 Poster">
+                        <button class="playBtn"
+                            onclick="playVid('public/video/Guardians2.mp4', 'public/captions/gg2Captions.vtt')">Play
+                            Guardians</button>
+
+                    </div>
+                    <p>Guardians of the Galaxy 2</p>
+                </div>
+                <div class="thumbnailRow">
+                    <div class="thumbnail">
+                        <img src="public/images/loganImgSm.jpg" alt="Logan Movie Poster">
+                        <button class="playBtn"
+                            onclick="playVid('public/video/Logan.mp4', 'public/captions/loganCaptions.vtt')">Play
+                            Logan</button>
+                    </div>
+                    <p>Logan</p>
+                </div>
+                <div class="thumbnailRow">
+                    <div class="thumbnail">
+                        <img src="public/images/jLewis.jpg" alt="Jenny Lewis promo image">
+                        <button class="playBtn" id="audioBtn" onclick="playAudio('public/audio/jennyLewis.mp3')">Play
+                            Song</button>
+                    </div>
+                    <audio id="audio" controls preload="auto" autoplay>
+                        <source src="" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
-        <button class="playerBtn toggle" title="Toggle Play">►</button>
-        <input type="range" name="volume" class="playerSlider" min="0" max="1" step="0.05" value="1">
-        <input type="range" name="playback" class="playerSlider" min="0.5" max="2" step="0.1" value="1">
-        <button data-skip="-10" class="playerBtn">« 10s</button>
-        <button data-skip="25" class="playerBtn">25s »</button>
+
+        <div id="lyrics">
+            <h2>Wasted Youth - Jenny Lewis</h2>
+            <p>System will slide it</p>
+            <p>Down upon</p>
+            <p>I can't tell you what</p>
+            <p>I think you're doing wrong</p>
+            <p>Stop your crying</p>
+            <p>Our daddy is gone</p>
+            <p>Do you remember when he</p>
+            <p>Used to sing us that little song?</p>
+            <p>I wasted my youth</p>
+            <p>On a poppy, du-du-du-du-du</p>
+            <p>Just for fun</p>
+            <p>I wasted my youth</p>
+            <p>On a poppy, du-du-du-du-du</p>
+            <p>Just because</p>
+            <p>Why you lyin'?</p>
+            <p>The Bourbon's gone</p>
+            <p>Mercury hasn't been in</p>
+            <p>Retrograde for that long</p>
+            <p>Oh no</p>
+            <p>Stop your hiding</p>
+            <p>And drop that bong</p>
+            <p>Do you remember when</p>
+            <p>I used to sing you this little song?</p>
+            <p>I wasted my youth</p>
+            <p>On a poppy, du-du-du-du-du</p>
+            <p>Just for fun</p>
+            <p>I wasted my youth</p>
+            <p>On a poppy, du-du-du-du-du</p>
+            <p>Just because</p>
+            <p>And everybody knows it's a tightrope</p>
+            <p>The cookie crumbles into dust</p>
+            <p>And everybody knows we're in trouble</p>
+            <p>Du-du-du-du-du, candy crush</p>
+            <p>Just 'cause you're young</p>
+            <p>Don't mean nothing</p>
+            <p>Don't mean nothing</p>
+            <p>We are here and we're gone</p>
+            <p>Do something while your heart is thumping</p>
+            <p>I wasted my youth</p>
+            <p>On a poppy, du-du-du-du-du</p>
+            <p>Just for because</p>
+            <p>I wasted my youth</p>
+            <p>On a poppy, du-du-du-du-du</p>
+            <p>Just for fun</p>
+            <p>And everybody knows it's a tightrope</p>
+            <p>The cookie crumbles into dust</p>
+            <p>And everybody knows we're in trouble</p>
+            <p>Du-du-du-du-du, candy crush</p>
+            <p>Wasted my youth</p>
+            <p>Wasted youth</p>
+            <p>Du-du-du-du-du</p>
+            <p>Wasted youth</p>
+            <p>Du-du-du-du-du</p>
+            <p>Wasted youth</p>
+            <p>Du-du-du-du-du</p>
         </div>
     </div>
+
     <script src="js/main.js"></script>
 </body>
 
